@@ -1,0 +1,20 @@
+<h1>Friends of Fox hill News</h1>
+
+
+
+<% @news.each do |news| %>
+ 
+    <h1><%= news.title %></h1>
+    <span><%= news.content %></span>
+<h3><%= news.created_date %></h3>
+    
+    <span><%= link_to 'Show', news %>
+    <%= link_to 'Edit', edit_news_path(news) %>
+    <%= link_to 'Destroy', news, confirm: 'Are you sure?', method: :delete %></span>
+  
+<% end %>
+
+
+<br/>
+
+<%= link_to 'New News', new_news_path %>
